@@ -7,11 +7,13 @@ const auth = require('./routes/auth');
 const appointments = require('./routes/appointments');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
+const cors = require('cors');
 
 //load env vars
 dotenv.config({ path: './config/config.env' });
 
 const app = express();
+app.use(cors());
 
 //body parser
 app.use(express.json());
